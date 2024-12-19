@@ -40,11 +40,10 @@ main {
     max-width: 100%;
     cursor: pointer;
     transition: all 0.3s ease;
-
 }
 
 .video-card.collapsed {
-    width: 90%;
+     width: 90%;
      max-width: 800px;
     padding: 0px;
     transition: all 0.3s ease;
@@ -56,8 +55,9 @@ main {
     grid-template-columns: 1fr;
     gap: 2px;
     padding: 2px;
-    transition: all 0.3s ease;
+     transition: all 0.3s ease;
 }
+
 
 .mosaic.collapsed {
     display: none;
@@ -82,16 +82,16 @@ main {
 
 .player-container {
     position: relative;
-     padding-bottom: 56.25%;
+    padding-bottom: 56.25%;
     overflow: hidden;
     display: none;
     transition: all 0.3s ease;
-      width: 95%; /* added width for the player container */
-    max-width: 100%; /* added max-width for the player container */
+    width: 95%;
+    max-width: 100%;
 }
 
 .player-container iframe {
-     position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -126,34 +126,35 @@ footer a:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+     display: none; /* set back button to display none by default */
 }
 #backButton:hover {
     background-color: #333;
 }
 
 
+
 @media (min-width: 768px) {
     header h1 {
         font-size: 2.5em;
     }
+
     main {
          padding: 2em;
     }
-     .video-card {
+    .video-card {
         width: 90%;
         max-width: 800px;
     }
-   .video-card.collapsed {
+    .video-card.collapsed {
          width: 90%;
          max-width: 800px;
     }
-    .mosaic {
+   .mosaic {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .player-container {
-         width: 90%; /* added width for the player container */
-       max-width: 800px;  /* added max-width for the player container */
+      .player-container {
+         width: 90%;
+         max-width: 800px;
     }
-
 }
