@@ -19,6 +19,9 @@
 
     <main>
         <div class="video-card" id="videoCard">
+            <button class="top-button" id="topButton">
+               <i class="fas fa-hand-point-down blink"></i>Experimente... AQUI! <i class="fas fa-hand-point-down blink"></i>
+           </button>
             <div class="mosaic" id="mosaicContainer">
                 <div class="thumb-container" data-video="https://www.youtube.com/embed/0CcNabQzrxg">
                     <img src="./assets/thumb1.png" alt="Thumbnail 1" class="thumbnail">
@@ -34,18 +37,22 @@
                 </div>
             </div>
             <div class="player-container" id="playerContainer" style="display: none;">
-                <button id="backButton" style="display: none;">Back to Videos</button>
+                 <button id="backButton" style="display: none;">Back to Videos</button>
                 <iframe id="videoPlayer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
             </div>
+              <button class="bottom-button" id="bottomButton">CONSULTE INFORMAÇÃO DETALHADA</button>
+        <div class="slides-container" id="slidesContainer" style="display: none;">
+           <button id="slidesBackButton" style="display: none;">Back to Videos</button>
+          <iframe id="slidesPlayer" src="https://docs.google.com/presentation/d/YOUR_SLIDES_ID/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
         </div>
     </main>
     <footer>
-      <h2><u>Inscreve-te Já!</u></h2>
-        <p><a href="https://wa.me/244953186182"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp: +244-953186182</a></p>
-        <p><a href="https://www.facebook.com/ticnes"><i class="fab fa-facebook-f"  style="color:#1877F2" ></i> Facebook: https://www.facebook.com/ticnes</a></p>
-        <p><a href="https://www.linkedin.com/company/ticnes-lda/"><i class="fab fa-linkedin" style="color:#0077B5"></i> LinkedIn: https://www.linkedin.com/company/ticnes-lda/</a></p>
-        <p><a href="https://www.instagram.com/ticnes_cyber_security/"><i class="fab fa-instagram" style="color:#E4405F"></i> Instagram: https://www.instagram.com/ticnes_cyber_security/</a></p>
-        
+        <p>Inscreve-te Já!</p>
+         <p><a href="https://wa.me/244953186182"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp: +244-953186182</a></p>
+         <p><a href="https://www.facebook.com/ticnes"><i class="fab fa-facebook-f"  style="color:#1877F2" ></i> Facebook: https://www.facebook.com/ticnes</a></p>
+         <p><a href="https://www.linkedin.com/company/your-linkedin-page"><i class="fab fa-linkedin" style="color:#0077B5"></i> LinkedIn: https://www.linkedin.com/company/your-linkedin-page</a></p>
+         <p><a href="https://www.instagram.com/your-instagram-page"><i class="fab fa-instagram" style="color:#E4405F"></i> Instagram: https://www.instagram.com/your-instagram-page</a></p>
     </footer>
     <script src="script.js"></script>
 </body>
