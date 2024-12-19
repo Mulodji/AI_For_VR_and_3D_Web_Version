@@ -43,24 +43,22 @@ main {
 }
 
 .video-card.collapsed {
-     width: 90%;
-     max-width: 800px;
+    width: 90%;
+    max-width: 800px;
     padding: 0px;
     transition: all 0.3s ease;
 }
-
 
 .mosaic {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2px;
     padding: 2px;
-     transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-
 .mosaic.collapsed {
-    display: none;
+    display: none !important;
 }
 
 .thumb-container {
@@ -126,13 +124,12 @@ footer a:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-     display: none; /* set back button to display none by default */
+    display: none;
 }
+
 #backButton:hover {
     background-color: #333;
 }
-
-
 
 @media (min-width: 768px) {
     header h1 {
@@ -140,9 +137,9 @@ footer a:hover {
     }
 
     main {
-         padding: 2em;
+        padding: 2em;
     }
-    .video-card {
+     .video-card {
         width: 90%;
         max-width: 800px;
     }
@@ -150,11 +147,11 @@ footer a:hover {
          width: 90%;
          max-width: 800px;
     }
-   .mosaic {
+    .mosaic {
         grid-template-columns: repeat(2, 1fr);
     }
-      .player-container {
-         width: 90%;
-         max-width: 800px;
+    .player-container {
+        width: 90%;
+        max-width: 800px;
     }
 }
