@@ -1,49 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
     const videoCard = document.getElementById('videoCard');
-    const carouselContainer = document.getElementById('carouselContainer');
-    const carouselVideo = document.getElementById('carouselVideo');
+    const playerContainer = document.getElementById('playerContainer');
+    const videoPlayer = document.getElementById('videoPlayer');
     const thumbContainers = document.querySelectorAll('.thumb-container');
-    let currentVideoIndex = 0;
-    let isCarouselPlaying = false;
-    let videoInterval;
+    let currentPlayingVideo = null;
 
-    const videos = Array.from(thumbContainers).map(container => container.getAttribute('data-video'));
+    thumbContainers.forEach(thumb => {
+        thumb.addEventListener('click', function() {
+            const videoURL = this.getAttribute('data-video');
+            
+            if (currentPlayingVideo === videoURL) {
+               // Already playing this video, no need to do anything
+                return;
+            }
+            
+            if(currentPlayingVideo) {
+               // Stop the currently playing video
+               videoPlayer.pause();
+               videoPlayer.currentTime = 0;
+               playerContainer.style.display = 'none';
+           }
 
-    const playCarousel = () => {
-         if(videos.length === 0 ) return;
-         
-        carouselVideo.src = videos[currentVideoIndex];
-         carouselContainer.style.display = 'block';
-        carouselVideo.play();
 
-         videoInterval = setInterval(() => {
-             currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-              carouselVideo.src = videos[currentVideoIndex];
-             carouselVideo.play();
-        }, 7000);
-    }
-
-    const stopCarousel = () => {
-        carouselVideo.pause();
-        carouselVideo.currentTime = 0;
-        carouselContainer.style.display = 'none';
-        clearInterval(videoInterval);
-        isCarouselPlaying = false;
-    };
-    
-
-    videoCard.addEventListener('click', function() {
-         if (isCarouselPlaying) {
-            stopCarousel();
-        } else {
-            playCarousel();
-             isCarouselPlaying = true;
-         }
+            videoPlayer.src = videoURL;
+             playerContainer.style.display = 'block';
+            videoPlayer.play();
+            currentPlayingVideo = videoURL;
+        });
     });
-    
-    
-   carouselVideo.addEventListener('click', function(){
-       stopCarousel();
-    })
 
+    videoPlayer.addEventListener('click', function(event) {
+           event.stopPropagation();
+      });
 });
