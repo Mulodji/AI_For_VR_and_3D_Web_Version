@@ -16,20 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if(currentPlayingVideo) {
                // Stop the currently playing video
-               videoPlayer.pause();
-               videoPlayer.currentTime = 0;
+                videoPlayer.src = '';
                playerContainer.style.display = 'none';
            }
 
 
-            videoPlayer.src = videoURL;
+             videoPlayer.src = videoURL;
              playerContainer.style.display = 'block';
-            videoPlayer.play();
-            currentPlayingVideo = videoURL;
+             currentPlayingVideo = videoURL;
         });
     });
-
-    videoPlayer.addEventListener('click', function(event) {
+     videoPlayer.addEventListener('click', function(event) {
            event.stopPropagation();
       });
 });
