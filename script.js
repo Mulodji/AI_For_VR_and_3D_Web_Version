@@ -16,18 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
     thumbContainers.forEach(thumb => {
         thumb.addEventListener('click', function() {
             const videoURL = this.getAttribute('data-video');
-            if (currentPlayingVideo === videoURL) {
-                // Already playing this video, no need to do anything
+              if (currentPlayingVideo === videoURL) {
+               // Already playing this video, no need to do anything
                 return;
             }
              if(currentPlayingVideo) {
-                // Stop the currently playing video
-                videoPlayer.src = '';
-                playerContainer.style.display = 'none';
-            }
-            mosaicContainer.style.display = 'none';
-             videoCard.classList.add('collapsed');
-            backButton.style.display = 'block';
+               // Stop the currently playing video
+               videoPlayer.src = '';
+               playerContainer.style.display = 'none';
+           }
+
+           mosaicContainer.style.display = 'none';
+            videoCard.classList.add('collapsed');
+           backButton.style.display = 'block';
             videoPlayer.src = videoURL;
             playerContainer.style.display = 'block';
             videoPlayer.play();
@@ -35,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    videoPlayer.addEventListener('ended', function() {
-       mosaicContainer.style.display = 'grid';
+     videoPlayer.addEventListener('ended', function() {
+        mosaicContainer.style.display = 'grid';
         videoCard.classList.remove('collapsed');
         backButton.style.display = 'none';
         currentPlayingVideo = null;
@@ -47,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
         playerContainer.style.display = 'none';
         mosaicContainer.style.display = 'grid';
           videoCard.classList.remove('collapsed');
-        backButton.style.display = 'none';
-        currentPlayingVideo = null;
+         backButton.style.display = 'none';
+         currentPlayingVideo = null;
     });
 
     videoPlayer.addEventListener('click', function(event) {
@@ -61,8 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
        videoCard.classList.add('collapsed');
         slidesContainer.style.display = 'block';
         slidesBackButton.style.display = 'block';
-         topButton.style.display = 'none'; // Hide the top button
-       bottomButton.style.display = 'none'; // Hide the bottom button
+        topButton.style.display = 'none';
+       bottomButton.style.display = 'none';
+
+        //Force the iframe to reload
+        slidesPlayer.src = slidesPlayer.src;
 
    });
 
@@ -70,9 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesContainer.style.display = 'none';
         mosaicContainer.style.display = 'grid';
         videoCard.classList.remove('collapsed');
-        slidesBackButton.style.display = 'none';
-          topButton.style.display = 'flex';  // Show the top button again
-        bottomButton.style.display = 'block';  // Show the bottom button again
-
+         slidesBackButton.style.display = 'none';
+         topButton.style.display = 'flex';
+        bottomButton.style.display = 'block';
     });
 });
