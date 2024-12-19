@@ -167,18 +167,19 @@ footer a:hover {
     overflow: hidden;
     display: none;
     transition: all 0.3s ease;
-    width: 95%;
+     width: 95%;
     max-width: 100%;
-    padding-bottom: 56.25%;
+   padding-bottom: 0; /* Remove the padding-bottom */
 }
 
 .slides-container iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;  /* Make iframe take full width of the container */
-    height: 100%; /* Make iframe take full height of the container */
+    width: 100%;
+    height: 100%;
 }
+
 
 #slidesBackButton {
     position: absolute;
@@ -234,8 +235,10 @@ footer a:hover {
         width: 90%;
         max-width: 800px;
     }
-    .slides-container {
+     .slides-container {
          width: 90%;
          max-width: 800px;
+         padding-bottom: 0; /* Remove the padding-bottom for the desktop */
     }
+
 }
