@@ -13,7 +13,7 @@
 
     <main>
         <div class="video-card" id="videoCard">
-            <div class="mosaic">
+            <div class="mosaic" id="mosaicContainer">
                 <div class="thumb-container" data-video="https://www.youtube.com/embed/0CcNabQzrxg">
                     <img src="./assets/thumb1.png" alt="Thumbnail 1" class="thumbnail">
                     
@@ -30,6 +30,7 @@
             </div>
         
            <div class="player-container" id="playerContainer" style="display: none;">
+                <button id="backButton" style="display:none;">Back to Videos</button>
              <iframe id="videoPlayer" width="560" height="315"  frameborder="0" allowfullscreen></iframe>
            </div>
         </div>
