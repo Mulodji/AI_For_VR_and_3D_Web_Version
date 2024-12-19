@@ -163,8 +163,8 @@ footer a:hover {
 }
 
 .slides-container {
-    position: relative; /* Keep position relative */
-    overflow: hidden; /* Keep overflow hidden */
+   position: relative;
+    overflow: hidden;
     display: none;
     transition: all 0.3s ease;
     width: 95%;
@@ -172,13 +172,14 @@ footer a:hover {
 }
 
 .slides-container iframe {
-    position: absolute; /* Keep position absolute */
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Set width to 100% */
-    height: 100%; /* Set height to 100% */
-    object-fit: fill; /* Add object-fit: fill */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remove object-fit: fill */
 }
+
 
 #slidesBackButton {
     position: absolute;
